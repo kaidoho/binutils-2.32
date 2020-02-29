@@ -87,6 +87,7 @@ if {[istarget *-img-elf*] \
     set abi_ldemul(o32) elf32lr5900
     set abi_ldemul(n32) elf32lr5900n32
 } elseif { [istarget *-*-elf*] \
+	   || [istarget *-*-rtems*] \
 	   || [istarget *-*-rtems*] } {
     if [istarget *el-*-*] {
 	set abi_ldemul(o32) elf32elmip

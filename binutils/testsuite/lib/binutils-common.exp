@@ -52,6 +52,7 @@ proc is_elf_format {} {
 	 && ![istarget *-*-sysv4*]
 	 && ![istarget *-*-unixware*]
 	 && ![istarget *-*-wasm32*]
+	 && ![istarget *-*-zephyr*]
 	 && ![istarget avr-*-*]
 	 && ![istarget hppa*64*-*-hpux*]
 	 && ![istarget ia64-*-hpux*] } {
@@ -232,7 +233,8 @@ proc is_bad_symtab {} {
 	 || [istarget "*-*-irix6*"]
 	 || [istarget "*-*-none"]
 	 || [istarget "*-*-rtems*"]
-	 || [istarget "*-*-windiss"] } {
+	 || [istarget "*-*-windiss"]
+	 || [istarget *-*-zephyr*] } {
 	return 1;
     }
     if { [istarget "*-*-elf*"]

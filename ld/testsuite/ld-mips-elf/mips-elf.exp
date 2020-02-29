@@ -235,7 +235,8 @@ if {[istarget *-*-openbsd*] } {
     set abi_ldflags(o32) -melf32lr5900
     set irixemul 1
 } elseif { [istarget *-*-elf*] \
-	   || [istarget *-*-rtems*] } {
+	   || [istarget *-*-rtems*] \
+	   || [istarget *-*-zephyr*] } {
     set abi_asflags(o32) -32
     set irixemul 1
 } elseif { [istarget *-*-irix6*] } {

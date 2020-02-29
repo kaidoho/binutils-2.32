@@ -994,7 +994,8 @@ if [expr ([istarget "i*86-*-*"] || [istarget "x86_64-*-*"]) && [gas_64_check]] t
       && ![istarget "*-*-rtems*"]
       && ![istarget "*-*-sco*"]
       && ![istarget "*-*-solaris*"]
-      && ![istarget "*-*-sysv*"] } then {
+      && ![istarget "*-*-sysv*"]
+      && ![istarget "*-*-zephyr*"] } then {
 	run_dump_test "rex"
     }
 

@@ -47,7 +47,7 @@ targ64_extra_libpath=
 case "${targ}" in
 aarch64_be-*-elf)	targ_emul=aarch64elfb
 			targ_extra_emuls="aarch64elf aarch64elf32 aarch64elf32b armelfb armelf" ;;
-aarch64-*-elf | aarch64-*-rtems*)
+aarch64-*-elf | aarch64-*-rtems* | aarch64-*-zephyr*)
 			targ_emul=aarch64elf
 			targ_extra_emuls="aarch64elf32 aarch64elf32b aarch64elfb armelf armelfb" ;;
 aarch64-*-cloudabi*)	targ_emul=aarch64cloudabi
@@ -115,7 +115,7 @@ arm-*-nto*)		targ_emul=armnto ;;
 arm-*-phoenix*)		targ_emul=armelf ;;
 armeb-*-elf | armeb-*-eabi*)
 			targ_emul=armelfb ;;
-arm-*-elf | arm*-*-eabi* | arm-*-rtems*)
+arm-*-elf | arm*-*-eabi* | arm-*-rtems* | arm-*-zephyr*)
 			targ_emul=armelf ;;
 arm*-*-symbianelf*)	targ_emul=armsymbian;;
 arm-*-kaos*)		targ_emul=armelf ;;
@@ -306,10 +306,10 @@ x86_64-*-netbsd*)	targ_emul=elf_x86_64
 			esac ;;
 i[3-7]86-*-elfiamcu)	targ_emul=elf_iamcu
 			targ_extra_emuls=elf_i386 ;;
-i[3-7]86-*-elf* | i[3-7]86-*-rtems*)
+i[3-7]86-*-elf* | i[3-7]86-*-rtems* | i[3-7]86-*-zephyr*)
 			targ_emul=elf_i386
 			targ_extra_emuls=elf_iamcu ;;
-x86_64-*-elf* | x86_64-*-rtems* | x86_64-*-fuchsia*)
+x86_64-*-elf* | x86_64-*-rtems* | x86_64-*-fuchsia* | x86_64-*-zephyr*)
 			targ_emul=elf_x86_64
 			targ_extra_emuls="elf_i386 elf_iamcu elf32_x86_64 elf_l1om elf_k1om"
 			targ_extra_libpath="elf_i386 elf_iamcu elf32_x86_64 elf_l1om elf_k1om"
@@ -461,7 +461,7 @@ mips*el-ps2-elf*)	targ_emul=elf32lr5900
 			targ_extra_emuls="elf32lr5900n32"
 			targ_extra_libpath=$targ_extra_emuls ;;
 mips*el-*-elf*)		targ_emul=elf32elmip ;;
-mips*-*-elf* | mips*-*-rtems*)
+mips*-*-elf* | mips*-*-rtems* | mips*-*-zephyr*)
 			targ_emul=elf32ebmip ;;
 mips*el-*-vxworks*)	targ_emul=elf32elmipvxworks
 			targ_extra_emuls="elf32ebmipvxworks" ;;
